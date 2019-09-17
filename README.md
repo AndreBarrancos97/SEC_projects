@@ -1,4 +1,6 @@
 # SEC_projects
 Projectos para a cadeira de Sistemas Electrónicos de Computadores 
 
-1ºProjecto - Guardar pass e testar funcionamento
+Teste no novo ubuntu
+
+
