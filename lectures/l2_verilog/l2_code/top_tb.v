@@ -32,14 +32,14 @@ module top_tb;
    initial begin
       $dumpfile("top.vcd");
       $dumpvars();
-      
+     //inicialização das variáveis para o testbench 
       rst = 1;
       clk = 1;
       
       data_in_valid = 0;
 
       #50.1 rst = 0;
-
+      //teste para saber se os resultados obtidos são os correctos
       for(i=0; i < 10; i++) begin 
 	 data_in = i+2;
 	 data_in_valid = 1;
@@ -52,7 +52,7 @@ module top_tb;
       $finish;
 
    end
-   
+   //geração do clock
    always
      #(10/2) clk = ~clk; //period=10ns => 100MHz
    
