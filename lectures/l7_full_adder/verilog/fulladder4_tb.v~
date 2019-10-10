@@ -1,0 +1,33 @@
+`timescale 1ns / 1ps
+
+module fulladder4_tb;
+
+   reg  [3:0] a;
+   reg  [3:0] b;
+   reg 	      ic;
+
+   wire [3:0] sum;
+   wire       co;
+
+   full_adder_4bits(
+		    .a(a),
+		    .b(b),
+		    .ic(ic),
+		    .oc(oc),
+		    .sum(sum)
+		    );
+
+   initial begin
+
+      $dumpfile("top.vcd");
+      $dumpvars();
+
+      a=1;
+      b=1;
+      ic=0;
+
+      $finish
+    end // initial begin
+   
+endmodule
+

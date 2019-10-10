@@ -1,0 +1,13 @@
+# PATHS
+VA := /home/andre/Documents/picoversat/tools/assembler/va
+
+all: program.hex
+
+# assemble program
+program.hex: program1.va xdict.json
+	$(VA) program1.va program.hex
+
+clean:
+	@rm -f xdict.json *# *~ rom.v
+
+.phony: all clean
