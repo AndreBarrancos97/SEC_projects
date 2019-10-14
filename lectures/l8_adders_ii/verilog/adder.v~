@@ -1,0 +1,13 @@
+`timescale 1ns/1ps
+
+module counter (
+  input  a,
+  input  b,
+  input  ci,
+  output co,
+  output sum
+);
+
+assign 
+
+endmodule
