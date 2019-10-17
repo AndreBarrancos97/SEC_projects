@@ -1,0 +1,66 @@
+$date
+	Thu Oct 17 14:56:09 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module fulladder4_tb $end
+$var wire 4 ! s [3:0] $end
+$var reg 2 " a [1:0] $end
+$var reg 2 # b [1:0] $end
+$scope module zica $end
+$var wire 2 $ a [1:0] $end
+$var wire 1 % aux $end
+$var wire 1 & aux_a0_b0 $end
+$var wire 1 ' aux_a0_b1 $end
+$var wire 1 ( aux_a1_b0 $end
+$var wire 1 ) aux_a1_b1 $end
+$var wire 2 * b [1:0] $end
+$var wire 4 + s [3:0] $end
+$var wire 1 , aux_cout1 $end
+$scope module fa0 $end
+$var wire 1 ( a $end
+$var wire 1 ' b $end
+$var wire 1 % c $end
+$var wire 1 , cout $end
+$var wire 1 - g $end
+$var wire 1 . p $end
+$var wire 1 / s $end
+$upscope $end
+$scope module fa1 $end
+$var wire 1 ) a $end
+$var wire 1 , b $end
+$var wire 1 % c $end
+$var wire 1 0 cout $end
+$var wire 1 1 g $end
+$var wire 1 2 p $end
+$var wire 1 3 s $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+13
+12
+01
+00
+1/
+1.
+0-
+0,
+b110 +
+b10 *
+1)
+0(
+1'
+0&
+0%
+b11 $
+b10 #
+b11 "
+b110 !
+$end

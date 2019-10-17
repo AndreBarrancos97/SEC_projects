@@ -2,19 +2,16 @@
 
 module fulladder4_tb;
 
-   reg  [3:0] a;
-   reg  [3:0] b;
-   reg 	      c;
-
+   reg  [1:0] a;
+   reg  [1:0] b;
+ 
    wire [3:0] s;
-   wire       c4;
+  
 
    top  zica(
 		    .a(a),
 		    .b(b),
-		    .c(c),
-		    .s(s),
-		    .c4(c4)
+		    .s(s)
 		    );
 
    initial begin
@@ -22,9 +19,9 @@ module fulladder4_tb;
       $dumpfile("top.vcd");
       $dumpvars();
 
-      a=5;
-      b=10;
-      c=0;
+      a=3;
+      b=2;
+      
 
       $finish;
       
