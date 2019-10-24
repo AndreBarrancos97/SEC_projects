@@ -1,0 +1,13 @@
+        #ldi c0
+	ldi 0x33
+	wrw R1
+	ldi 0x32
+	wrw R2
+	ldi 0x34
+	wrw R3
+	wrw CPRT_BASE
+	
+end	wrw 0x7fff
+
+C0	.memset 'H'
+
