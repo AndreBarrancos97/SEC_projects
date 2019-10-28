@@ -64,7 +64,7 @@ module xtop_tb;
       // Run picoVersat
       //
       start_time = $time;
-
+      
 
       //
       // Dump reg file data to outfile

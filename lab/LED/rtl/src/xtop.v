@@ -5,11 +5,12 @@
 module xtop (
 	     input                clk,
 	     input                rst,
-             output               trap
+             output               trap,
+	     output               led,
 
 `ifndef NO_EXT
 	     // external parallel interface
-	     , output [`ADDR_W-2:0] par_addr,
+	     output [`ADDR_W-2:0] par_addr,
 	     input [`DATA_W-1:0]  par_in,
              output               par_re, 
 	     output [`DATA_W-1:0] par_out,
@@ -42,6 +43,7 @@ module xtop (
    wire				  regf_sel;
    wire [`DATA_W-1:0] 		  regf_data_to_rd;
 
+   wire                           led_sel;
    
 `ifdef DEBUG
    reg 				  cprt_sel;
@@ -122,8 +124,9 @@ module xtop (
 `ifdef DEBUG
                                //debug char printer
 	                       .cprt_sel(cprt_sel),
+			       
 `endif
-
+                               .led_sel(led_sel),
 `ifndef NO_EXT
                                //external
                                .ext_sel(ext_sel),
@@ -142,6 +145,13 @@ module xtop (
    // USER MODULES INSERTED BELOW
    //
    //
+   xled led1(
+	     .reset(rst),
+	     .clk(clk),
+	     .sel(led_sel),
+	     .data_in(data_to_wr[0]),
+	     .led(led)
+	     );
    
 `ifdef DEBUG
    xcprint cprint (

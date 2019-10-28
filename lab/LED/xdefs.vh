@@ -30,6 +30,9 @@
 `define CPRT_BASE 528 
 `define CPRT_ADDR_W 0 //only one address
 
+`define LED_BASE 600 
+`define LED_ADDR_W 0 //only one address
+
 `define EXT_BASE 768
 `define EXT_ADDR_W 7
 
