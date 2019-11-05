@@ -4,28 +4,27 @@
 module xaddr_decoder (
 	             // address and global select signal
 	              input [`ADDR_W-1:0] addr,
-                      input 		  sel,
+                      input               sel,
              
                       // ports
-                      //led
-                      output reg          led_sel, 
+                      output reg led_sel,
                       //memory
-	              output reg 	  mem_sel,
-                      input [31:0] 	  mem_data_to_rd,
-		   
-	              output reg 	  regf_sel,
-                      input [31:0] 	  regf_data_to_rd,
+	              output reg          mem_sel,
+                      input [31:0]        mem_data_to_rd,
+
+	              output reg          regf_sel,
+                      input [31:0]        regf_data_to_rd,
 
 `ifdef DEBUG	
-	              output reg 	  cprt_sel,
+	              output reg          cprt_sel,
 `endif
 
 `ifndef NO_EXT
-                      output reg 	  ext_sel,
-                      input [31:0] 	  ext_data_to_rd,
+                      output reg          ext_sel,
+                      input [31:0]        ext_data_to_rd,
 `endif
                       
-                      output reg 	  trap_sel,
+                      output reg          trap_sel,
 
                       //read port
                       output reg [31:0]   data_to_rd
@@ -50,16 +49,11 @@ module xaddr_decoder (
         mem_sel = sel;
       else if ( (addr & {  {`ADDR_W-`REGF_ADDR_W{1'b1}}, {`REGF_ADDR_W{1'b0}}  }) == `REGF_BASE)
         regf_sel = sel;
-`ifndef NO_EXT
-      else if ( (addr & {  {`ADDR_W-`EXT_ADDR_W{1'b1}}, {`EXT_ADDR_W{1'b0}}  }) == `EXT_BASE)
-        ext_sel = sel;
-`endif
 `ifdef DEBUG
       else if ( (addr &  {  {`ADDR_W-`CPRT_ADDR_W{1'b1}}, {`CPRT_ADDR_W{1'b0}}  }) == `CPRT_BASE)
         cprt_sel = sel;
-
 `endif
-     else if ( (addr &  {  {`ADDR_W-`LED_ADDR_W{1'b1}}, {`LED_ADDR_W{1'b0}}  }) == `LED_BASE)
+      else if ( (addr &  {  {`ADDR_W-`LED_ADDR_W{1'b1}}, {`LED_ADDR_W{1'b0}}  }) == `LED_BASE)
         led_sel = sel;
       else
           trap_sel = sel;
@@ -76,7 +70,6 @@ module xaddr_decoder (
 `ifndef NO_EXT
       else if(ext_sel)
         data_to_rd = ext_data_to_rd;
-
 `endif
    end
 
