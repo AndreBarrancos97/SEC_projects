@@ -9,7 +9,7 @@ all: program.hex
 program.hex: program.va xdict.json
 	$(VA) program.va program.hex
 
-xdict.json: xdefs.vh
+xdict.json: $(INCLUDE_DIR)/xdefs.vh
 			../../../picoversat/tools/xdictgen $(INCLUDE_DIR)
 
 #rtl files
