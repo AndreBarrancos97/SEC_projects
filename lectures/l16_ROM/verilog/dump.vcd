@@ -1,0 +1,25 @@
+$date
+	Thu Nov  7 14:43:58 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module rom_tb $end
+$var wire 6 ! decoder [5:0] $end
+$var reg 4 " addr [3:0] $end
+$scope module zica $end
+$var wire 4 # addr [3:0] $end
+$var reg 6 $ decoder [5:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10101 $
+b1000 #
+b1000 "
+b10101 !
+$end
