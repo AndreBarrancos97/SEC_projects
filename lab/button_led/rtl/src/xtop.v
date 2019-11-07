@@ -3,18 +3,19 @@
 
 
 module xtop (
-	     input                clk,
-	     input                rst,
-             output               trap,
-	     output               led
-`ifndef NO_EXT
-	     // external parallel interface
-	     ,output [`ADDR_W-2:0] par_addr,
+	     input 		  clk,
+	     input 		  rst,
+	     input                push_button, 		  
+             output 		  trap,
+	     output 		  led
+				  `ifndef NO_EXT
+				  // external parallel interface
+				  ,output [`ADDR_W-2:0] par_addr,
 	     input [`DATA_W-1:0]  par_in,
-             output               par_re, 
+             output 		  par_re, 
 	     output [`DATA_W-1:0] par_out,
-	     output               par_we
-`endif
+	     output 		  par_we
+				  `endif
 	     );
 
    //
@@ -40,8 +41,10 @@ module xtop (
    wire [`DATA_W-1:0] 		  mem_data_to_rd;
    
    wire				  regf_sel;
-   wire [`DATA_W-1:0] 		  regf_data_to_rd;
+   wire [`DATA_W-1:0] 		  regf_data_to_rd; 			  
    wire                           led_sel;
+   wire                           button_sel;
+   wire                           button;
    
    
 `ifdef DEBUG
@@ -134,7 +137,7 @@ module xtop (
                                //trap
                                .trap_sel(trap),
                                .led_sel(led_sel),
-                               
+                               .button_sel(button_sel),
                                //data output 
                                .data_to_rd(data_to_rd)
                                );
@@ -144,11 +147,19 @@ module xtop (
    // USER MODULES INSERTED BELOW
    //
    //
-   xled led1(
+    xbutton button1(
 	     .reset(rst),
 	     .clk(clk),
-	     .sel(led_sel),
-	     .data_in(data_to_wr[0]),
+	     .push_button(push_button),
+	     .button_sel(button_sel),
+	     .button(button)
+	     );
+   
+    xled led1(
+	     .reset(rst),
+	     .clk(clk),
+	     .led_sel(led_sel),
+	     .button(button),
 	     .led(led)
 	     );
    

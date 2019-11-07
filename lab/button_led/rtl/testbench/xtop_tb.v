@@ -13,6 +13,8 @@ module xtop_tb;
    reg clk;
    reg rst;
    wire trap;
+   wire led;
+   reg  push_button;
    
 `ifndef NO_EXT
    //external parallel interface
@@ -31,8 +33,10 @@ module xtop_tb;
    // Instantiate the Unit Under Test (UUT)
    xtop uut (
 	     .clk(clk),
+	     .push_button(push_button),
              .rst(rst),
-             .trap(trap)
+             .trap(trap),
+	     .led(led)
 	     
 `ifndef NO_EXT
    	     // external parallel interface
@@ -53,6 +57,7 @@ module xtop_tb;
       // Initialize Inputs
       clk = 1;
       rst = 0;  
+      push_button = 1;
       
      // assert reset for 1 clock cycle
       #(clk_period+1)

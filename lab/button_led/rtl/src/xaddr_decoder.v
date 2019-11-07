@@ -4,27 +4,28 @@
 module xaddr_decoder (
 	             // address and global select signal
 	              input [`ADDR_W-1:0] addr,
-                      input               sel,
+                      input 		  sel,
              
                       // ports
-                      output reg led_sel,
+                      output reg 	  led_sel,
+		      output reg 	  button_sel,
                       //memory
-	              output reg          mem_sel,
-                      input [31:0]        mem_data_to_rd,
+	              output reg 	  mem_sel,
+                      input [31:0] 	  mem_data_to_rd,
 
-	              output reg          regf_sel,
-                      input [31:0]        regf_data_to_rd,
+	              output reg 	  regf_sel,
+                      input [31:0] 	  regf_data_to_rd,
 
 `ifdef DEBUG	
-	              output reg          cprt_sel,
+	              output reg 	  cprt_sel,
 `endif
 
 `ifndef NO_EXT
-                      output reg          ext_sel,
-                      input [31:0]        ext_data_to_rd,
+                      output reg 	  ext_sel,
+                      input [31:0] 	  ext_data_to_rd,
 `endif
                       
-                      output reg          trap_sel,
+                      output reg 	  trap_sel,
 
                       //read port
                       output reg [31:0]   data_to_rd
@@ -33,6 +34,8 @@ module xaddr_decoder (
    
    //select module
    always @* begin
+      button_sel = 1'b0;
+      led_sel = 1'b0;
       mem_sel = 1'b0;
       regf_sel = 1'b0;
 `ifdef DEBUG
@@ -54,6 +57,8 @@ module xaddr_decoder (
 `endif
       else if ( (addr &  {  {`ADDR_W-`LED_ADDR_W{1'b1}}, {`LED_ADDR_W{1'b0}}  }) == `LED_BASE)
         led_sel = sel;
+      else if ( (addr &  {  {`ADDR_W-`BUTTON_ADDR_W{1'b1}}, {`BUTTON_ADDR_W{1'b0}}  }) == `BUTTON_BASE)
+        button_sel = sel;
       else
           trap_sel = sel;
    end

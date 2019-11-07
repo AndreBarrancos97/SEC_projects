@@ -33,6 +33,9 @@
 `define LED_BASE 700 
 `define LED_ADDR_W 0 
 
+`define BUTTON_BASE 750 
+`define BUTTON_ADDR_W 0 
+
 `define NO_EXT 1
 
 `define TRAP_BASE 1023
