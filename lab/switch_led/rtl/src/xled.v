@@ -5,14 +5,14 @@ module xled (
 		input 	   reset,
 		input 	   clk,
 		input 	   led0_sel,
-	        input      sw0_status,
+	        input      sw0,
 		output reg led0
 		);
 
  always @(posedge clk,posedge reset)
    if (reset)
      led0 <= 1'b0;
-   else if(led0_sel && sw0_status)
+   else if(led0_sel && sw0)
      led0 <= 1'b1;
      
 

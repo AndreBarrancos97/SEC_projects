@@ -43,8 +43,7 @@ module xtop (
    wire				  regf_sel;
    wire [`DATA_W-1:0] 		  regf_data_to_rd; 			  
    wire                           led0_sel;
-   wire                           sw0_sel;
-   wire                           sw0_status;
+
    
    
 `ifdef DEBUG
@@ -137,7 +136,7 @@ module xtop (
                                //trap
                                .trap_sel(trap),
                                .led0_sel(led0_sel),
-                               .sw0_sel(sw0_sel),
+                               
                                //data output 
                                .data_to_rd(data_to_rd)
                                );
@@ -147,19 +146,13 @@ module xtop (
    // USER MODULES INSERTED BELOW
    //
    //
-    xsw0 sw00(
-	     .reset(rst),
-	     .clk(clk),
-	     .sw0(sw0),
-	     .sw0_sel(sw0_sel),
-	     .sw0_status(sw0_status)
-	     );
+
    
     xled led00(
 	     .reset(rst),
 	     .clk(clk),
 	     .led0_sel(led0_sel),
-	     .sw0_status(sw0_status),
+	     .sw0(sw0),
 	     .led0(led0)
 	     );
    

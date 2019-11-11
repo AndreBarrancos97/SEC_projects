@@ -8,7 +8,7 @@ module xaddr_decoder (
              
                       // ports
                       output reg 	  led0_sel,
-		      output reg 	  sw0_sel,
+		      
                       //memory
 	              output reg 	  mem_sel,
                       input [31:0] 	  mem_data_to_rd,
@@ -34,7 +34,7 @@ module xaddr_decoder (
    
    //select module
    always @* begin
-      sw0_sel = 1'b0;
+      
       led0_sel = 1'b0;
       mem_sel = 1'b0;
       regf_sel = 1'b0;
@@ -57,8 +57,7 @@ module xaddr_decoder (
 `endif
       else if ( (addr &  {  {`ADDR_W-`LED0_ADDR_W{1'b1}}, {`LED0_ADDR_W{1'b0}}  }) == `LED0_BASE)
         led0_sel = sel;
-      else if ( (addr &  {  {`ADDR_W-`SW0_ADDR_W{1'b1}}, {`SW0_ADDR_W{1'b0}}  }) == `SW0_BASE)
-        sw0_sel = sel;
+
       else
           trap_sel = sel;
    end

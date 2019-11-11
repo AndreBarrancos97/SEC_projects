@@ -33,9 +33,6 @@
 `define LED0_BASE 700 
 `define LED0_ADDR_W 0 
 
-`define SW0_BASE 710 
-`define SW0_ADDR_W 0 
-
 `define NO_EXT 1
 
 `define TRAP_BASE 1023
