@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/andre/Documents/SEC_projects/lab/test/xtop.xst" -ofn "/home/andre/Documents/SEC_projects/lab/test/xtop.syr" 
+xst -intstyle ise -ifn "/home/andre/Documents/SEC_projects/lab/test/xtop.xst" -ofn "/home/andre/Documents/SEC_projects/lab/test/xtop.syr" 

@@ -1,0 +1,12 @@
+total_cost = unitary_cost*total_produce + NRE
+total_cost = 10*10³*10³ + 2*10⁶ = 12*10⁶ $
+
+total_money_no_delay = (H*W)/2
+
+total_money_with_delay = ((W-d)h(d))/2
+h(d) = ((W-d)/W)*H
+
+total_money_with_delay = ((W-d)²*H)/2W
+total_money_with_delay_1_month = (14²*3*10⁶)/(2*15) = 19,6 * 10⁶ $
+
+PM = (total_money_with_delay_1_month - total_cost)/total_money_with_delay_1_month = 38,7%

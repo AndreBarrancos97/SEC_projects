@@ -1,0 +1,6 @@
+MO xtop NULL ../led_new_makefile/rtl/src/xtop.v vlg07/xtop.bin 1574008652
+MO xctrl NULL ../led_new_makefile/rtl/src/xctrl.v vlg49/xctrl.bin 1574008652
+MO xaddr_decoder NULL ../led_new_makefile/rtl/src/xaddr_decoder.v vlg54/xaddr__decoder.bin 1574008652
+MO xram NULL ../led_new_makefile/rtl/src/xram.v vlg0C/xram.bin 1574008652
+MO xregf NULL ../led_new_makefile/rtl/src/xregf.v vlg68/xregf.bin 1574008652
+MO xled NULL ../led_new_makefile/rtl/src/xled.v vlg01/xled.bin 1574008652

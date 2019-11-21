@@ -1,0 +1,2 @@
+Este programa faz a multiplicação do quadrado da entrada anterior com a entrada actual.
+Tem uma latencia de 2 clocks, pois faz primeiro load da entrada actual e depois no outro clock é que mostra o resultado final.

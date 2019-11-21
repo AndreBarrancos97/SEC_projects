@@ -1,0 +1,6 @@
+verilog work "../switch_led/rtl/src/xregf.v"
+verilog work "../switch_led/rtl/src/xram.v"
+verilog work "../switch_led/rtl/src/xled.v"
+verilog work "../switch_led/rtl/src/xctrl.v"
+verilog work "../switch_led/rtl/src/xaddr_decoder.v"
+verilog work "../switch_led/rtl/src/xtop.v"

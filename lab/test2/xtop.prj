@@ -1,0 +1,6 @@
+verilog work "../led_new_makefile/rtl/src/xregf.v"
+verilog work "../led_new_makefile/rtl/src/xram.v"
+verilog work "../led_new_makefile/rtl/src/xled.v"
+verilog work "../led_new_makefile/rtl/src/xctrl.v"
+verilog work "../led_new_makefile/rtl/src/xaddr_decoder.v"
+verilog work "../led_new_makefile/rtl/src/xtop.v"

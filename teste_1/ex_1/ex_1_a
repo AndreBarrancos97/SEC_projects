@@ -1,0 +1,13 @@
+total_cost = unitary_cost*total_produce + NRE
+total_cost = 10*10³*10³ + 2*10⁶ = 12*10⁶ $
+
+total_money_no_delay = (H*W)/2
+
+total_money_with_delay = ((W-d)h(d))/2
+h(d) = ((W-d)/W)*H
+
+total_money_with_delay = ((W-d)²*H)/2W
+
+total_money_with_delay = total_cost
+
+((W-d)²*H)/2W = 12*10⁶ => d= 15-(sqrt((12*10⁶*(2*15))/3)) => d= 4,045 months
