@@ -3,11 +3,12 @@
 module full_adder_4bits (
   input  [3:0]a,
   input  [3:0]b,
-  input  ci,
+  //input  ci,
   output co,
   output [3:0]sum
 );
 
+   wire  ci = 0;
    wire  aux1;
    wire  aux2;
    wire  aux3;

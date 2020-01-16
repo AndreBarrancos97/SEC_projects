@@ -1,0 +1,7 @@
+#ways = 2
+#lines = 8kB/ (2*32B) = 2^7 = 128 linhas = index
+
+offset bits = log2 (32*2^3/32) = 3 bits
+set_bits = log2(256) = 8
+address_bits = log2 ((512*2^20)/4) = 27 bits
+tag_bits = 27 - 8 - 3 = 16

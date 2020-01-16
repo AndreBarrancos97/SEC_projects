@@ -22,7 +22,7 @@ module add_shft_mul (
    reg [7:0]                    aux_sumy;
    reg [7:0]                    aux_sumy_v2;
 
-complement_to_2 comple2(
+multiply_complement_to_2 multiply_comple2(
   .rst(rst),
   .clk(clk),
   .first_nr_reg(a),
@@ -33,7 +33,7 @@ complement_to_2 comple2(
   .complement1_finish()
 );
 
-full_adder_8bits_XOR complement_result(
+multiply_8bits_XOR multiply_complement_result(
 	.rst(rst),
 	.clk(clk),
 	.complement1_sel(complement_result_sel),

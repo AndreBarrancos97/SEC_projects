@@ -1,0 +1,5 @@
+1 chip tem tamanho 1kb e saida 8 bits
+
+Para fazer uma Ram de 32 bits preciso 4 Rams numa linha = 4kb
+
+Logo para obter 16 kB preciso de 4 linhas com 4 Rams da alinha a)

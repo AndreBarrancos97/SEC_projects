@@ -1,0 +1,16 @@
+Cd = 400 fF
+Cc = 20 fF
+Vdd = 1,8V
+Vdd/2 = 0,9V
+Delta V = 80 mV
+Ts = 5ps
+
+Vinf = ((cd -cc)/(cd + cc))* Vdd/2 = 0,81 V
+	
+
+
+Ts = Ri * C ln(( 0,9 - 0,81)/(0,9 - 0,080 - 0,81))
+
+C = (Cd * Cc)/(Cd + Cc) = 19 fF
+
+Ri = 5ps / (42*(10^15)) = 120 ohms

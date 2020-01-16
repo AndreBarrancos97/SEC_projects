@@ -1,0 +1,5 @@
+First ram = 2^10 * 8 = 8Kb
+Number of chips = 32kB/8kb = 32 chips
+
+Serão precisos 5 bits para selecionar o a RAM = 2⁵ = 32
+e serão necessários 10 bits para escolher o endereço
