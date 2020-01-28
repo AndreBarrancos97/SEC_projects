@@ -4,9 +4,9 @@ module add_shft_mul (
                      input         clk,
                      input         rst,
                      
-                     input [3:0]   a, 
-                     input [3:0]   b,
-                     output reg [7:0] c,
+                     input [7:0]   a, 
+                     input [7:0]   b,
+                     output reg [15:0] c,
                      input         start,
                      output        done
                      );
@@ -51,13 +51,13 @@ multiply_8bits_XOR multiply_complement_result(
    always@(posedge clk)
      if(rst)begin
        counter <= 4'd4;
-       aux_sumy_v2 <= 8'd0;
+       aux_sumy_v2 <= 16'd0;
        //a_aux <= 4'd0;
        //b_aux <= 4'd0;        
       end
      else if (start)begin
        counter <= 4'd0;
-       aux_sumy_v2 <= 8'd0;
+       aux_sumy_v2 <= 16'd0;
        //a_aux <= a;
        //b_aux <= b;       
        end
@@ -83,24 +83,24 @@ multiply_8bits_XOR multiply_complement_result(
      if (counter != 4'd11)begin
        counter <= counter + 1'b1;
      end*/
-     if((counter < 4'd4) & (a[3]==1'b0) & (b[3]==1'b0)) begin
-        aux_sumy_v2 <= (aux_sumy_v2>>1) + (b[counter]? a<<3: 8'd0); 
+     if((counter < 4'd4) & (a[7]==1'b0) & (b[7]==1'b0)) begin
+        aux_sumy_v2 <= (aux_sumy_v2>>1) + (b[counter]? a<<7: 16'd0); 
      end
 
-     if((counter < 4'd4) & (a[3]==1'b1) & (b[3]==1'b0)) begin
+     if((counter < 4'd4) & (a[7]==1'b1) & (b[7]==1'b0)) begin
         //aux_sumy_v2 <= (aux_sumy_v2>>>1) + (b[counter]? a<<4: 8'd0);
         complement_result_sel <= 1'b1;
-        aux_sumy_v2 <= (aux_sumy_v2>>1) + (first_nr_aux[counter]? b<<3: 8'd0);
+        aux_sumy_v2 <= (aux_sumy_v2>>1) + (first_nr_aux[counter]? b<<7: 16'd0);
      end
 
-     if((counter < 4'd4) & (a[3]==1'b0) & (b[3]==1'b1)) begin
+     if((counter < 4'd4) & (a[7]==1'b0) & (b[7]==1'b1)) begin
         //aux_sumy_v2 <= (aux_sumy_v2>>>1) + (a[counter]? b<<4: 8'd0);
         complement_result_sel <= 1'b1;
-        aux_sumy_v2 <= (aux_sumy_v2>>1) + (a[counter]? second_nr_aux<<3: 8'd0); 
+        aux_sumy_v2 <= (aux_sumy_v2>>1) + (a[counter]? second_nr_aux<<7: 16'd0); 
      end
 
-     if((counter < 4'd4) & (a[3]==1'b1) & (b[3]==1'b1)) begin
-        aux_sumy_v2 <= (aux_sumy_v2>>1) + (first_nr_aux[counter]? second_nr_aux<<3: 8'd0); 
+     if((counter < 4'd4) & (a[7]==1'b1) & (b[7]==1'b1)) begin
+        aux_sumy_v2 <= (aux_sumy_v2>>1) + (first_nr_aux[counter]? second_nr_aux<<7: 16'd0); 
      end
      
      if (done)begin

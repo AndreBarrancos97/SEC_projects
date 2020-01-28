@@ -1,0 +1,7 @@
+#ways = 2
+#lines = 4kB/ (2*32B) = #ways = 128      6 = index bits
+
+offset bits = log2 (32*2^3/32) = 3 bits
+byte_sel = 32 bits = 4bytes => 2 address bits reserved for byte selection
+address_space = 4GB = 2²*2^30 => address bits = 32 bits
+tag_bits = 32 -2  -6 -3 = 21
